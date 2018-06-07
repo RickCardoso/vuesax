@@ -158,11 +158,15 @@ export default {
         this.classList.add('activo')
       if(this.classList.contains('filled')){
         setTimeout( ()=> {
-          spanx.style.left = x+'px';
-          spanx.style.top = y+'px';
-          spanx.style.width = '0px';
-          spanx.style.height = '0px';
-          spanx.remove()
+          spanxs = this.querySelectorAll('.relleno')
+
+          spanxs.forEach(spanx => {
+            spanx.style.left = x+'px';
+            spanx.style.top = y+'px';
+            spanx.style.width = '0px';
+            spanx.style.height = '0px';
+            spanx.remove()
+          })
         }, time*1000);
       }
     })
